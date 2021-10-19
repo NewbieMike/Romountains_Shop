@@ -6,16 +6,12 @@ import clsx from 'clsx';
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './MainLayout.module.scss';
-
-// import { NavBar } from '../../features/NavBar/NavBar';
-// import { Footer } from '../Footer/Footer';
+import styles from './Homepage.module.scss';
+import { ProductsList } from '../ProductList/ProductList';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    {/* <NavBar /> */}
-    {children}
-    {/* <Footer /> */}
+    <ProductsList />
   </div>
 );
 
@@ -35,7 +31,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as MainLayout,
-  // Container as MainLayout,
-  Component as MainLayoutComponent,
+  Component as Homepage,
+  // Container as Homepage,
+  Component as HomepageComponent,
 };

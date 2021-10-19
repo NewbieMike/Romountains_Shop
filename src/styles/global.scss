@@ -1,0 +1,19 @@
+@import './settings.scss';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: $paragraph;
+}
+button {
+    background-color: $white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: 2px solid $black;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+button:hover {
+    background-color: $black;
+    color: $white;
+}

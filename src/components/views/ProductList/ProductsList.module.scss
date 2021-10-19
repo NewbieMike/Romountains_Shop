@@ -1,0 +1,43 @@
+@import '../../../styles/settings.scss';
+
+.product_card {
+    height: 400px;
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 5px;
+    border-radius: 25px;
+    img {
+        height: 280px;
+        object-fit: cover;
+        object-position: center;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        border-radius: 25px 25px 0 0;
+    }
+    .product_card_content {
+        display: flex;
+        flex-direction: column;
+
+        h5 {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            font-variant: small-caps;
+            text-transform: uppercase;
+            font-family: $title;
+        }
+        p {
+            text-align: justify;
+        }
+        .product_card_content_buttons {
+            margin: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}
