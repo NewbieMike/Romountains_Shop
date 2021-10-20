@@ -1,0 +1,81 @@
+@import '../../../styles/settings.scss';
+.root_landingPage {
+    background-attachment: fixed;
+    background-image: url('https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.landingPage_text_content {
+    position: absolute;
+    top: 230px;
+    left: 300px;
+    border-left: 3px solid $yellow;
+    h3,
+    h1 {
+        font-size: 76px;
+        text-transform: uppercase;
+        font-family: $title;
+        font-weight: 500;
+        letter-spacing: -7px;
+        margin: 0;
+        text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.165);
+    }
+    h3 {
+        font-size: 33px;
+        letter-spacing: -1px;
+        position: relative;
+        border-bottom: 3px solid $yellow;
+    }
+    // h3::after {
+    //     position: absolute;
+    //     content: "";
+    //     background-color: $yellow;
+    //     bottom: 0;
+    //     left: 0;
+    //     height: 3px;
+    //     width: 480px;
+    // }
+}
+
+.color_box {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    bottom: 0;
+    left: 300px;
+    border: 1px solid $black;
+    a {
+        text-decoration: none;
+        font-size: 36px;
+        color: $black;
+        text-transform: uppercase;
+        font-family: $title;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(-45deg, rgba(0,0,0,0.7) 50%, $yellow 50%);
+        background-position: 100% 0;
+        background-size: 300%;
+        transition: 0.4s ease-in-out;
+        color: $white;
+    }
+}
+.color_box:nth-child(2) {
+    left: 600px;
+}
+.color_box:nth-child(3) {
+    bottom: 300px;
+    left: 900px;
+}
+
+.color_box:hover a{
+    background-position: 0 100%;
+    color: $black;
+}

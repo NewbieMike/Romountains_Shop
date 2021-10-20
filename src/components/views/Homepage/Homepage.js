@@ -7,11 +7,16 @@ import clsx from 'clsx';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
 import styles from './Homepage.module.scss';
+
 import { ProductsList } from '../ProductList/ProductList';
+import { LandingPage } from '../LandingPage/LandingPage';
 
 const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <ProductsList />
+  <div className={clsx(className, styles.root_homepage)}>
+    <LandingPage />
+    <div className={clsx(className, styles.productList_container)}>
+      <ProductsList />
+    </div>
   </div>
 );
 
