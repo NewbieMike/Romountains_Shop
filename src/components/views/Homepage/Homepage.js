@@ -8,15 +8,13 @@ import clsx from 'clsx';
 
 import styles from './Homepage.module.scss';
 
-import { ProductsList } from '../ProductList/ProductList';
 import { LandingPage } from '../LandingPage/LandingPage';
+import { Shop } from '../Shop/Shop';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root_homepage)}>
     <LandingPage />
-    <div className={clsx(className, styles.productList_container)}>
-      <ProductsList />
-    </div>
+    <Shop />
   </div>
 );
 
