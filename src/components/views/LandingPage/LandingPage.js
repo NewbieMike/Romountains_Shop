@@ -14,7 +14,7 @@ import { HashLink } from 'react-router-hash-link';
 const Component = ({ className, children }) => {
   Aos.init({duration: 1500});
   return(
-    <div className={clsx(className, styles.root_landingPage)}>
+    <div className={clsx(className, styles.root_landingPage)} id='Home'>
       <div className={clsx(className, styles.landingPage_text_content)}>
         <h1>romountains</h1>
         <h3>discover the undiscovered</h3>
