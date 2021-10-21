@@ -2,12 +2,15 @@
 
 .product_card {
     height: 400px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     flex: 1;
     margin: 5px;
     border-radius: 25px;
+    transition: 0.4s ease-in-out;
+    text-decoration: none;
+    color: $black;
     img {
         height: 280px;
         object-fit: cover;
@@ -16,6 +19,8 @@
         background-size: cover;
         width: 100%;
         border-radius: 25px 25px 0 0;
+        filter: grayscale(0.85);
+        transition: 0.3s ease-in-out;
     }
     .product_card_content {
         display: flex;
@@ -31,6 +36,7 @@
             text-transform: uppercase;
             font-family: $title;
             color: inherit;
+            
         }
         p {
             text-align: justify;
@@ -41,4 +47,11 @@
             justify-content: space-around;
         }
     }
+}
+
+.product_card:hover {
+    img {
+        filter: grayscale(0.2);
+    }
+    background-color: rgba(0,0,0,0.6);
 }

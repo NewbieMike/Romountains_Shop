@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+.slogan_style {
+    font-family: $title;
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+    h1 {
+        padding: 20px 0;
+    }
+}

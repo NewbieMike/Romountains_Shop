@@ -11,6 +11,7 @@ import styles from './Shop.module.scss';
 
 import { ProductsList } from '../ProductList/ProductList';
 import { HashLink } from 'react-router-hash-link';
+import { Slogan } from '../../features/Slogan/Slogan';
 
 const responsive = {
   superLargeDesktop: {
@@ -33,7 +34,7 @@ const responsive = {
 };
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root_shop)}>
-    <Carousel responsive={responsive} className={clsx(className, styles.car)}>
+    <Carousel responsive={responsive} className={clsx(className, styles.car)} infinite={true} autoPlay={true} autoPlaySpeed={3000}>
       <HashLink className={clsx(className, styles.carousel_item)} to='/#Shop' smooth>
         <img src='https://images.pexels.com/photos/640947/pexels-photo-640947.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='' />
         <div className={clsx(className, styles.carousel_text)}>
@@ -62,6 +63,7 @@ const Component = ({className, children}) => (
     <div className={clsx(className, styles.productList_container)} id='Shop'>
       <ProductsList />
     </div>
+    <Slogan />
   </div>
 );
 
