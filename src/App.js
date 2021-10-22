@@ -8,16 +8,18 @@ import { store } from './redux/store';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Homepage } from './components/views/Homepage/Homepage';
+import { Cart } from './components/views/Cart/Cart';
+import { Product } from './components/views/Product/Product';
+
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <MainLayout>
         <Switch>
           <Route exact path='/' component={Homepage} />
-          
-          {/* <Route exact path='/product/:id' component={Product} />
-          <Route exact path='/products' component={Products} />
           <Route exact path='/cart' component={Cart} />
+          <Route exact path='/product/:id' component={Product} />
+          {/* 
           <Route exact path='/order' component={Order} />
           <Route path='*' component={NotFound} /> */}
         </Switch>

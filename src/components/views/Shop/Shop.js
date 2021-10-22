@@ -33,7 +33,7 @@ const responsive = {
   },
 };
 const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root_shop)}>
+  <div className={clsx(className, styles.root_shop)} id='Shop'>
     <Carousel responsive={responsive} className={clsx(className, styles.car)} infinite={true} autoPlay={true} autoPlaySpeed={3000}>
       <HashLink className={clsx(className, styles.carousel_item)} to='/#Shop' smooth>
         <img src='https://images.pexels.com/photos/640947/pexels-photo-640947.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='' />
@@ -60,7 +60,7 @@ const Component = ({className, children}) => (
         </div>
       </HashLink>
     </Carousel>
-    <div className={clsx(className, styles.productList_container)} id='Shop'>
+    <div className={clsx(className, styles.productList_container)} >
       <ProductsList />
     </div>
     <Slogan />

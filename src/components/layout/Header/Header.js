@@ -23,11 +23,11 @@ const Component = ({ className }) => {
       <div className={clsx(className, styles.header_column)}>
         <HashLink to='/#Home' smooth>Home</HashLink>
         <HashLink to='/#Shop' smooth>Shop</HashLink>
-        <HashLink to='/' smooth>About</HashLink>
-        <HashLink to='/' smooth>Contact</HashLink>
+        <HashLink to='/#About' smooth>About</HashLink>
+        <HashLink to='/#Contact' smooth>Contact</HashLink>
       </div>
       <div className={clsx(className, styles.header_column)}>
-        <HashLink to='/' smooth><img src={basket} alt='basket'/>Cart</HashLink>
+        <HashLink to='/cart' smooth><img src={basket} alt='basket'/>Cart</HashLink>
       </div>
     </nav>
   );

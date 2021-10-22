@@ -6,6 +6,8 @@ import Axios from 'axios';
 export const getAll = ({products}) => products.data;
 export const getOne = ({products}) => products.oneProduct;
 
+// console.log(getOne);
+
 /* action name creator */
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
