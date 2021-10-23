@@ -1,0 +1,49 @@
+@import '../../../styles/settings.scss';
+
+.order_view {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+}
+.inputs_container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    label {
+        font-size: 20px;
+    }
+    input {
+        width: 200px;
+        height: 24px;
+    }
+}
+
+table {
+    border-spacing: 0;
+    thead {
+        tr {
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+        }
+        td {
+            border: 1px solid $black;
+            padding: 10px;
+        }
+    }
+
+    tbody {
+         tr td {
+            text-align: center;
+            height: 100px;
+            border: 1px solid $black;
+            margin: 0;
+            padding: 0;
+            
+             img {
+                 width: 66px;
+                 height: 66px;
+             }
+         }
+    }
+}

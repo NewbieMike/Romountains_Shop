@@ -32,9 +32,9 @@ const Component = ({ className, cartItems }) => {
 
   let totalPrice = subtotalPrice + deliveryFee;
 
+  
   return (
     <div className={clsx(className, styles.cart_view)}>
-      <h1>Your cart</h1>
       <div className={clsx(className, styles.product_card_container)}>
         {cartItems.map((cartItem) => (
           <Link key={cartItem._id} className={clsx(className, styles.product_card)} to={`/product/${cartItem._id}`}>
@@ -49,9 +49,14 @@ const Component = ({ className, cartItems }) => {
         )
         )}
       </div>
-      <h2>Products price: {subtotalPrice} $</h2>
-      <h2>Delivery: {deliveryFee} $</h2>
-      <h2>Products + delivery price: {totalPrice} $</h2>
+      <div className={clsx(className, styles.cart_prices)}>
+        {cartItems.length ? (
+          <div><h2>Products price: {subtotalPrice} $</h2>
+            <h2>Delivery: {deliveryFee} $</h2>
+            <h2>Products + delivery price: {totalPrice} $</h2>
+            <Link to='/order'><button className={clsx(className, styles.make_order)}>Make order</button></Link>
+          </div>) : (<div></div>)}
+      </div>
     </div>
   );
 };

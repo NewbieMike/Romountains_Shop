@@ -1,8 +1,17 @@
 @import '../../../styles/settings.scss';
-
+.cart_view {
+    display: flex;
+    margin-top: 100px;
+}
+.cart_prices {
+    flex: 1;
+}
 .product_card_container {
     display: flex;
+    flex-wrap: wrap;
     margin: 10px;
+    min-height: 60vh;
+    flex: 1;
 }
 h2,
 h1 {
@@ -83,4 +92,10 @@ h2 {
         filter: grayscale(0.2);
     }
     background-color: rgba(0,0,0,0.6);
+}
+
+.make_order {
+    padding: 10px 150px;
+    margin: 10px 30px;
+    font-weight: 600;
 }

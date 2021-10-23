@@ -10,6 +10,7 @@ import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Homepage } from './components/views/Homepage/Homepage';
 import { Cart } from './components/views/Cart/Cart';
 import { Product } from './components/views/Product/Product';
+import { Order } from './components/views/Order/Order';
 
 const App = () => (
   <Provider store={store}>
@@ -19,9 +20,8 @@ const App = () => (
           <Route exact path='/' component={Homepage} />
           <Route exact path='/cart' component={Cart} />
           <Route exact path='/product/:id' component={Product} />
-          {/* 
           <Route exact path='/order' component={Order} />
-          <Route path='*' component={NotFound} /> */}
+          {/* <Route path='*' component={NotFound} /> */}
         </Switch>
       </MainLayout>
     </BrowserRouter>
