@@ -1,24 +1,39 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-
+import swal from 'sweetalert';
 import clsx from 'clsx';
 
 import { connect } from 'react-redux';
 import { getOne, fetchOneFromAPI } from '../../../redux/productsRedux.js';
+import { addToCart } from '../../../redux/cartRedux.js';
 
 import styles from './Product.module.scss';
 // import { Link } from 'react-router-dom';
 
 
 
-const Component = ({ className, product, fetchOneFromAPI, ...props }) => {
+const Component = ({ className, product, fetchOneFromAPI, addToCart,  ...props }) => {
 
   useEffect(() => {
     fetchOneFromAPI(props.match.params.id);
   }, [fetchOneFromAPI, props.match.params.id]);
 
   console.log('product', product);
+
+  const addItemToCartObject = {
+    _id: product && product._id,
+    name: product && product.name,
+    image: product && product.image,
+    description: product && product.description,
+    price: product && product.price,
+  };
+
+  const handleAddToCart = e => {
+    e.preventDefault();
+    addToCart(addItemToCartObject);
+    swal(`${product.name} added successfully to cart!`);
+  };
 
   return (
     <div className={clsx(className, styles.product_view)}>
@@ -35,12 +50,13 @@ const Component = ({ className, product, fetchOneFromAPI, ...props }) => {
               <p>{product.description}</p>
               <p>Price: {product.price}$</p>
               <div className={clsx(className, styles.buttons)}>
-                <button>Add {product.name} to cart</button>
+                <button onClick={handleAddToCart}>
+                  Add {product.name} to cart
+                </button>
               </div>
             </div>
           </div>
         </div>
-
       )}
     </div>
   );
@@ -53,6 +69,7 @@ Component.propTypes = {
   match: PropTypes.object,
   product: PropTypes.object,
   fetchOneFromAPI: PropTypes.func,
+  addToCart: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -61,6 +78,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchOneFromAPI: (id) => dispatch(fetchOneFromAPI(id)),
+  addToCart: arg => dispatch(addToCart(arg)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
