@@ -1,29 +1,57 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 
 import clsx from 'clsx';
 
 import { connect } from 'react-redux';
-import { getAll, fetchAllProducts } from '../../../redux/productsRedux.js';
+import { getCartItems } from '../../../redux/cartRedux.js';
 
 import styles from './Cart.module.scss';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
-const Component = ({ className, products, fetchAllProducts }) => {
+const Component = ({ className, cartItems }) => {
+
+  const [ subtotalPrice, setSubtotalPrice ] = useState(0);
 
   useEffect(() => {
-    fetchAllProducts();
-  });
+    let price = 0;
+    cartItems.forEach(item => {
+      price += parseInt(item.price);
+    });
+    setSubtotalPrice(price);
+  }, [cartItems]);
 
-  console.log('products', products);
+  let deliveryFee = 12;
+
+  if (subtotalPrice > 99) {
+    deliveryFee = 0;
+  }
+
+  let totalPrice = subtotalPrice + deliveryFee;
 
   return (
     <div className={clsx(className, styles.cart_view)}>
-      <h2>.</h2>
-      <h1>Cart view</h1>
+      <h1>Your cart</h1>
+      <div className={clsx(className, styles.product_card_container)}>
+        {cartItems.map((cartItem) => (
+          <Link key={cartItem._id} className={clsx(className, styles.product_card)} to={`/product/${cartItem._id}`}>
+            <img src={cartItem.image} alt={cartItem.name} />
+            <div className={clsx(className, styles.product_card_content)}>
+              <h5>{cartItem.name}</h5>
+              <div className={clsx(className, styles.product_card_content_buttons)}>
+                <button>{cartItem.price} $</button>
+              </div>
+            </div>
+          </Link>
+        )
+        )}
+      </div>
+      <h2>Products price: {subtotalPrice} $</h2>
+      <h2>Delivery: {deliveryFee} $</h2>
+      <h2>Products + delivery price: {totalPrice} $</h2>
     </div>
   );
 };
@@ -32,18 +60,15 @@ Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   products: PropTypes.array,
+  cartItems: PropTypes.array,
   fetchAllProducts: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
-  products: getAll(state),
+  cartItems: getCartItems(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchAllProducts: () => dispatch(fetchAllProducts()),
-});
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps)(Component);
 
 export {
   //Component as ProductsList,

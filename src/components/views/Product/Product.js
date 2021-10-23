@@ -9,7 +9,7 @@ import { getOne, fetchOneFromAPI } from '../../../redux/productsRedux.js';
 import { addToCart } from '../../../redux/cartRedux.js';
 
 import styles from './Product.module.scss';
-// import { Link } from 'react-router-dom';
+
 
 
 
