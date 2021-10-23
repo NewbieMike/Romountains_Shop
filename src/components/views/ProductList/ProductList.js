@@ -28,7 +28,7 @@ const Component = ({ className, products, fetchAllProducts }) => {
           <div className={clsx(className, styles.product_card_content)}>
             <h5>{product.name}</h5>
             <div className={clsx(className, styles.product_card_content_buttons)}>
-              <button>Add to cart</button>
+              <button>View product</button>
               <button>{product.price} $</button>
             </div>
           </div>

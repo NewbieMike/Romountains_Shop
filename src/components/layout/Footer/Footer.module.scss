@@ -39,3 +39,10 @@
         background-color: $yellow;
     }
 }
+
+@media (max-width: 1440px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+  }

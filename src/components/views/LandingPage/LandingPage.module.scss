@@ -31,6 +31,9 @@
         position: relative;
         border-bottom: 3px solid $yellow;
     }
+    h1::after {
+        height: 0;
+    }
     // h3::after {
     //     position: absolute;
     //     content: "";
@@ -78,4 +81,52 @@
 .color_box:hover a{
     background-position: 0 100%;
     color: $black;
+}
+
+@media (max-width: 1440px) {
+    .landingPage_text_content {
+        position: absolute;
+        top: 380px;
+        left: 100px;
+        border-left: 3px solid $yellow;
+    }
+    .color_box {
+        width: 200px;
+        height: 200px;
+        left: 200px;
+        a{
+            font-size: 30px;
+        }
+    }
+    .color_box:nth-child(2) {
+        left: 400px;
+    }
+    .color_box:nth-child(3) {
+        bottom: 200px;
+        left: 600px;
+    }
+  }
+  @media (max-width: 768px) {
+    .color_box {
+        display: none;
+    }
+    .landingPage_text_content {
+            border: 3px solid $yellow;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        h3,
+        h1 {
+            font-size: 45px;
+            letter-spacing: -5px;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.165);
+    }
+    h3 {
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 0;
+    }
+  }
+
 }

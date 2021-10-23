@@ -45,3 +45,8 @@
         }
     }
 }
+@media (max-width: 1440px) {
+    .productList_container {
+        flex-wrap: wrap;
+    }
+  }

@@ -10,11 +10,13 @@ import styles from './Homepage.module.scss';
 
 import { LandingPage } from '../LandingPage/LandingPage';
 import { Shop } from '../Shop/Shop';
+import { About } from '../About/About';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root_homepage)}>
     <LandingPage />
     <Shop />
+    <About />
   </div>
 );
 

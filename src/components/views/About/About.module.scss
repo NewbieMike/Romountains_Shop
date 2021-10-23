@@ -1,0 +1,38 @@
+@import '../../../styles/settings.scss';
+
+.about_container {
+    display: flex;
+    margin: 30px;
+
+    img {
+        flex: 1;
+        height: 600px;
+        width: 600px;
+        border-radius: 6px;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+        object-fit: cover;
+    }
+    p{
+        flex: 1;
+        line-height: 30px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .about_container {
+        p {
+            font-size: 18px;
+            line-height: 25px;
+        }
+     }
+  }
+  @media (max-width: 1024px) {
+    .about_container {
+        flex-direction: column;
+
+        img {
+            width: 100%;
+        }
+     }
+  }
