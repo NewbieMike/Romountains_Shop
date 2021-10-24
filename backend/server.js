@@ -2,10 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
+require('dotenv').config();
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const productsRoutes = require('./routes/products.routes');
-
+const ordersRoutes = require('./routes/orders.routes');
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 /* API ENDPOINTS */
 app.use('/api', productsRoutes);
-
+app.use('/api', ordersRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {
