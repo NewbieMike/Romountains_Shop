@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 
 import clsx from 'clsx';
 
 import styles from './About.module.scss';
-import { Link } from 'react-router-dom';
 
 
 

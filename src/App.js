@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+
 import './styles/global.scss';
 
 import { store } from './redux/store';
@@ -11,6 +12,8 @@ import { Homepage } from './components/views/Homepage/Homepage';
 import { Cart } from './components/views/Cart/Cart';
 import { Product } from './components/views/Product/Product';
 import { Order } from './components/views/Order/Order';
+
+console.log(document.cookie);
 
 const App = () => (
   <Provider store={store}>
