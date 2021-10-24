@@ -19,7 +19,7 @@ const Component = ({className, children}) => (
     {children}
     <Footer />
     <CookieConsent 
-    //degub = true if we develope page, every refresh banner will appear
+      //degub = true if we develope page, every refresh banner will appear
       debug={false}
       location='bottom'
       expires={365}

@@ -13,7 +13,7 @@ import { Cart } from './components/views/Cart/Cart';
 import { Product } from './components/views/Product/Product';
 import { Order } from './components/views/Order/Order';
 
-console.log(document.cookie);
+console.log(process.env);
 
 const App = () => (
   <Provider store={store}>

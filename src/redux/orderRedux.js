@@ -1,5 +1,7 @@
 import Axios from 'axios';
 
+import { API_URL } from '../config';
+
 /* selectors */
 export const getPersonalData = ({order}) => order.personalData;
 
@@ -27,7 +29,7 @@ export const cleanOrderForm = payload => ({ payload, type: CLEAN_ORDER_FORM });
 export const addOrderInAPI = newOrder => {
   return (dispatch, getState) => {
     Axios
-      .post(`http://localhost:8000/api/orders`, newOrder)
+      .post(`${API_URL}/orders`, newOrder)
       .then(res => {
         dispatch(addOrder(res.data));
       })
