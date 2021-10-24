@@ -30,7 +30,7 @@ app.use('*', (req, res) => {
 });
 
 /* MONGOOSE */
-const dbURI = `mongodb+srv://adminRomountains:adminR123@romountains.1s40y.mongodb.net/romountainsDB?retryWrites=true&w=majority`;
+const dbURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@romountains.1s40y.mongodb.net/romountainsDB?retryWrites=true&w=majority`;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.once('open', () => {
