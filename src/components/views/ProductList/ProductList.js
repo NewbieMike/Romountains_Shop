@@ -22,18 +22,24 @@ const Component = ({ className, products, fetchAllProducts }) => {
 
   return (
     <>
-      {products.map((product) => (
-        <Link key={product._id} className={clsx(className, styles.product_card)} to={`/product/${product._id}`}>
-          <img src={product.image} alt={product.name} />
-          <div className={clsx(className, styles.product_card_content)}>
-            <h5>{product.name}</h5>
-            <div className={clsx(className, styles.product_card_content_buttons)}>
-              <button>View product</button>
-              <button>{product.price} $</button>
+      {!products.length ? (
+        <div className={styles.loading_screen}>
+          <p>No products at stock, come back later.</p>
+        </div>
+      ) : (
+        products.map((product) => (
+          <Link key={product._id} className={clsx(className, styles.product_card)} to={`/product/${product._id}`}>
+            <img src={product.image} alt={product.name} />
+            <div className={clsx(className, styles.product_card_content)}>
+              <h5>{product.name}</h5>
+              <div className={clsx(className, styles.product_card_content_buttons)}>
+                <button>View product</button>
+                <button>{product.price} $</button>
+              </div>
             </div>
-          </div>
-        </Link>
-      )
+          </Link>
+        )
+        )
       )}
     </>
   );
