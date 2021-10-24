@@ -50,3 +50,35 @@
     flex: 4;
     justify-content: space-around;
 }
+
+@media (max-width: 768px) {
+    
+    .header_column {
+        
+        a{font-size: 18px;}
+    }
+
+}
+
+@media (max-width: 430px) {
+    
+    .header_column {
+        
+        a{
+            font-size: 16px;
+        }
+        a:nth-child(4),
+        a:nth-child(3),
+        a:nth-child(2) {
+            display: none;
+        }
+    }
+    .header_column:nth-child(2) { 
+        flex: 1;
+    }
+    .header_column:last-of-type {
+         a{ 
+             padding: 10px 15px;
+            }
+    }
+}
