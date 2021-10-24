@@ -24,9 +24,9 @@ app.use('/api', (req, res) => {
 });
 
 /* REACT WEBSITE */
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../build')));
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 /* MONGOOSE */

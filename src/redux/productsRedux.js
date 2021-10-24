@@ -28,8 +28,8 @@ export const fetchOneProduct = payload => ({ payload, type: FETCH_ONE_PRODUCT })
 export const fetchAllProducts = () => {
   return (dispatch, getState) => {
     dispatch(fetchStarted);
-    // const {products} = getState();
-    // console.log('products: ', products);
+    const {products} = getState();
+    console.log('products: ', products);
     if(!getState().products.data.length && getState().products.loading.active === false) {
       Axios
         .get(`${API_URL}/products`)
